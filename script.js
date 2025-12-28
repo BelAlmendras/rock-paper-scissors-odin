@@ -33,9 +33,13 @@ while (f < 1) {
     console.log("=================================");
     console.log("Welcome to Rock, Paper, Scissors!");
     console.log("=================================");
-    let round = parseInt(prompt("How many rounds would you like to play? (Enter a number): "));
+    let round = parseInt(prompt("How many rounds would you like to play? (Max 5): "));
     let playerScore = 0;
     let computerScore = 0;
+    if (round > 5){
+        console.log("Maximum rounds is 5. Setting rounds to 5.");
+        round = 5;
+    }
     for (let i = 0; i < round; i++) {
         playRound(playerScore, computerScore, i, round);
     }
